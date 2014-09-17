@@ -1,0 +1,45 @@
+<nodes>
+        <node id ="MessageBrokerNode1" type="standalone">
+	        <product name="mb" version="2.2.0" />
+		 <congfigurations>
+            <config id="andes_config" fileName="andes-config.xml" location="/home/ubuntu/deployment/wso2mb-2.2.0/repository/conf/advanced">
+                <clustering>
+                        <enabled>true</enabled>
+                        <externalCassandraServerRequired>true</externalCassandraServerRequired>
+                        <externalZookeeperServerRequired>true</externalZookeeperServerRequired>
+                        <coordination>
+                                <ZooKeeperConnection>123</ZooKeeperConnection>
+                                <ZooKeeperConnection>123</ZooKeeperConnection>
+                        </coordination>
+                </clustering>
+            </config>
+            <config id="andes-virtualhosts" fileName="andes-virtualhosts.xml" location="/home/ubuntu/deployment/wso2mb-2.2.0/repository/conf/advanced">
+                <virtualhosts>
+                        <virtualhost>
+                                <store>
+                                        <connectionString>2</connectionString>
+                                        <connectionString>3</connectionString>
+                                </store>
+                                <advanced>
+                                        <replicationFactor>2</replicationFactor>
+                                </advanced>
+                        </virtualhost>
+                </virtualhosts>
+            </config>
+        </congfigurations>
+		<create>
+			<file>
+				<filename>myid</filename>
+				<location>/home/ubuntu</location>
+				<content>1</content>
+			</file>
+			<file>
+                        	<filename>myid2</filename>
+                     	  	<location>/home/ubuntu</location>
+                       		<content>1</content>
+                	</file>
+		</create>
+		<serverOptions></serverOptions>
+    </node>
+</nodes>
+

@@ -1,0 +1,63 @@
+<nodes>
+  <node id ="Cassandra1" type="standalone">
+        <product name="mb" version="2.2.0" />
+        <congfigurations>
+            <config id="cassandra_yaml" fileName="cassandra.yaml" location="/home/ubuntu/deployment/wso2mb-2.2.0/repository/conf/etc">
+                <seeds>
+                        <seed>{Cassandra1}</seed>
+                        <seed>{Cassandra2}</seed>
+                        <seed>{Cassandra3}</seed>
+                        <seed>{Cassandra4}</seed>
+                </seeds>
+                <listenAddress>{Cassandra1}</listenAddress>
+            </config>
+        </congfigurations>
+        <serverOptions>-Dprofile=cassandra</serverOptions>
+    </node>
+    <node id ="Cassandra2" type="standalone">
+        <product name="mb" version="2.2.0" />
+        <congfigurations>
+            <config id="cassandra_yaml" fileName="cassandra.yaml" location="/home/ubuntu/deployment/wso2mb-2.2.0/repository/conf/etc">
+                <seeds>
+                        <seed>{Cassandra1}</seed>
+                        <seed>{Cassandra2}</seed>
+                        <seed>{Cassandra3}</seed>
+                        <seed>{Cassandra4}</seed>
+                </seeds>
+                <listenAddress>{Cassandra2}</listenAddress>
+            </config>
+        </congfigurations>
+        <serverOptions>-Dprofile=cassandra</serverOptions>
+    </node>
+     <node id ="Cassandra3" type="standalone">
+        <product name="mb" version="2.2.0" />
+        <congfigurations>
+            <config id="cassandra_yaml" fileName="cassandra.yaml" location="/home/ubuntu/deployment/wso2mb-2.2.0/repository/conf/etc">
+                <seeds>
+                        <seed>{Cassandra1}</seed>
+                        <seed>{Cassandra2}</seed>
+                        <seed>{Cassandra3}</seed>
+                        <seed>{Cassandra4}</seed>
+                </seeds>
+                <listenAddress>{Cassandra3}</listenAddress>
+            </config>
+        </congfigurations>
+        <serverOptions>-Dprofile=cassandra</serverOptions>
+    </node>
+    <node id ="Cassandra4" type="standalone">
+        <product name="mb" version="2.2.0" />
+        <congfigurations>
+            <config id="cassandra_yaml" fileName="cassandra.yaml" location="/home/ubuntu/deployment/wso2mb-2.2.0/repository/conf/etc">
+                <seeds>
+                        <seed>{Cassandra1}</seed>
+                        <seed>{Cassandra2}</seed>
+                        <seed>{Cassandra3}</seed>
+                        <seed>{Cassandra4}</seed>
+                </seeds>
+                <listenAddress>{Cassandra4}</listenAddress>
+            </config>
+        </congfigurations>
+        <serverOptions>-Dprofile=cassandra</serverOptions>
+    </node>
+
+</nodes>

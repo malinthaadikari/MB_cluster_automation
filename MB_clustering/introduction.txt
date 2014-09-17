@@ -1,0 +1,16 @@
+There are two modules 
+
+1. python module
+2. puppet module
+
+1. python module is for automating instaince booting, deleting, get-ip addresses...etc operations
+2. puppet modules is for get the correct pack, unzip it into a given location ( currently clound instance ) , make configurations and start-up the carbon server
+
+How things working...
+
+1. There is a xml file inside the python module. Everything related to configuration changes should be mentioned there. Related .erb files should be included inside the templetes folder inside the pupprt module.
+2. python module loolks at the xml and boot up instances in openstack account.
+3. At the new instance's starup , it get the related part of the xml and make changes in the unziped carbon pack in it.
+4. puppet master finally start-up the given carbon server inside the openstack instances.
+
+

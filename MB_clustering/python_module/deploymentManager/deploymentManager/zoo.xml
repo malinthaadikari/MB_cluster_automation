@@ -1,0 +1,91 @@
+<nodes>
+<node id ="ZooKeeper1" type="standalone">
+        <product name="mb" version="2.2.0" />
+        <congfigurations>
+            <config id="zoo_ctg" fileName="zoo.cfg" location="/home/ubuntu/deployment/wso2mb-2.2.0/repository/conf/etc">
+                <tickTime>500</tickTime>
+                <initLimit>10</initLimit>
+                <syncLimit>5</syncLimit>
+                <clientPort>2181</clientPort>
+                <clientPortAddress>{ZooKeeper1}</clientPortAddress>
+                <servers>
+                        <server>{ZooKeeper1}</server>
+                        <server>{ZooKeeper2}</server>
+                        <server>{ZooKeeper3}</server>
+                </servers>
+            </config>
+        </congfigurations>
+	 <create>
+                <file>
+                        <filename>myid</filename>
+                        <location>/home/ubuntu/deployment/wso2mb-2.2.0/repository/data/zookeeper</location>
+                        <content>1</content>
+                </file>
+                <folder>
+                        <name>zookeeper</name>
+                        <location>/home/ubuntu/deployment/wso2mb-2.2.0/repository/data</location>
+                </folder>
+        </create>
+        <serverOptions>-Dprofile=zookeeper</serverOptions>
+    </node>
+    <node id ="ZooKeeper2" type="standalone">
+        <product name="mb" version="2.2.0" />
+        <congfigurations>
+            <config id="zoo_ctg" fileName="zoo.cfg" location="/home/ubuntu/deployment/wso2mb-2.2.0/repository/conf/etc">
+               <tickTime>500</tickTime>
+                <initLimit>10</initLimit>
+                <syncLimit>5</syncLimit>
+                <clientPort>2181</clientPort>
+                <clientPortAddress>{ZooKeeper2}</clientPortAddress>
+                <servers>
+                        <server>{ZooKeeper1}</server>
+                        <server>{ZooKeeper2}</server>
+                        <server>{ZooKeeper3}</server>
+                </servers>
+            </config>
+        </congfigurations>
+	<create>
+                <file>
+                        <filename>myid</filename>
+                        <location>/home/ubuntu/deployment/wso2mb-2.2.0/repository/data/zookeeper</location>
+                        <content>2</content>
+                </file>
+                <folder>
+                        <name>zookeeper</name>
+                        <location>/home/ubuntu/deployment/wso2mb-2.2.0/repository/data</location>
+                </folder>
+        </create>
+
+        <serverOptions>-Dprofile=zookeeper</serverOptions>
+    </node>
+     <node id ="ZooKeeper3" type="standalone">
+        <product name="mb" version="2.2.0" />
+        <congfigurations>
+            <config id="zoo_ctg" fileName="zoo.cfg" location="/home/ubuntu/deployment/wso2mb-2.2.0/repository/conf/etc">
+                <tickTime>500</tickTime>
+                <initLimit>10</initLimit>
+                <syncLimit>5</syncLimit>
+                <clientPort>2181</clientPort>
+                <clientPortAddress>{ZooKeeper3}</clientPortAddress>
+                <servers>
+                        <server>{ZooKeeper1}</server>
+                        <server>{ZooKeeper2}</server>
+                        <server>{ZooKeeper3}</server>
+                </servers>
+            </config>
+        </congfigurations>
+	<create>
+                <file>
+                        <filename>myid</filename>
+                        <location>/home/ubuntu/deployment/wso2mb-2.2.0/repository/data/zookeeper</location>
+                        <content>3</content>
+                </file>
+                <folder>
+                        <name>zookeeper</name>
+                        <location>/home/ubuntu/deployment/wso2mb-2.2.0/repository/data</location>
+                </folder>
+        </create>
+
+        <serverOptions>-Dprofile=zookeeper</serverOptions>
+    </node>
+</nodes>
